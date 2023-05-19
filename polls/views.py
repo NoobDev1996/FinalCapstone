@@ -1,3 +1,28 @@
+"""
+
+This .py file contains Django view functions for a polling application.
+The views handle various aspects of the application, includeing rendering the poll page,
+displaying the details of a specific poll, showing the results of a poll and
+handling the users vote for a poll.
+
+The views are decorated with @login_required which means the user needs to be authenticated
+in order to use the polling application. If the user is not authenticated, they will be sent back
+to the login page.
+
+The detail view takes a question ID as a parameter and retrieves the corresponding question from the database.
+If the question does not exist, a 404 error will be raised. The view then renders the html template
+passing the question as context.
+
+The `results` view is similar to the `detail` view. It retrieves the question based on the provided question ID,
+raises a 404 error if the question does not exist, and renders the 'polls/results.html' template with the question
+as context.
+
+The `vote` view handles the user's vote for a specific question. It retrieves the question from the database using
+the question ID. If the user has not selected a choice, or the choice does not exist, the view re-renders the 'polls/details.html'
+template with an error message. If the choice is valid, the vote count for the choice is incremented, and the updated
+choice is saved. Finally, the user is redirected to the 'polls:results' URL, which will display the results of the poll.
+
+"""
 from django.shortcuts import render
 from django.shortcuts import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
