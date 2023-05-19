@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  {% load static %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const scrollDownButton = document.querySelector(".scroll-down");
+      scrollDownButton.addEventListener("click", function() {
+        window.scrollBy({top: window.innerHeight, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+
+    @font-face {
+      font-family: 'DEADLY KILLERS Regular';
+      src: url('C:\Users\Beer C\Desktop\Hyperion Dev\Level 2\T23\illusion\homepage\templates\homepage\fonts\DeadlyKillers-K7RxX.ttf');
+    }
+
+
+    /* Set full height for header */
+    #header {
+      height: 100vh;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+    }
+
+    /* Header carousel */
+    #header .carousel-item {
+      height: 100vh;
+    }
+
+    #header .carousel-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Header text */
+    #header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'DEADLY KILLERS Regular';
+      font-size: 3.5rem;
+      text-align: center;
+      z-index: 1;
+    }
+
+    /* Add padding for content below header */
+    #content {
+      padding-top: 100px;
+    }
+
+    /* Style the dropdown arrow icon */
+    .scroll-down {
+      display: block;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      margin-left: -20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      /*background-color: #fff;*/
+      text-align: center;
+      line-height: 40px;
+      font-size: 1.5rem;
+      color: #fff;
+      z-index: 2;
+    }
+
+    .scroll-down i {
+      position: relative;
+      top: 2px;
+    }
+
+
+
+
+    /* Custom styles for additional information */
+    .info {
+      background-color: #f2f2f2;
+      padding: 50px;
+      margin-bottom: 50px;
+    }
+
+    .info h2 {
+      font-family: 'DEADLY KILLERS Regular', sans-serif;
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      line-height: 1.5;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      #header-text h1 {
+        font-size: 4rem;
+    }
+
+      #header-text p {
+        font-size: 1.5rem;
+    }
+
+      .info {
+        padding: 20px;
+    }
+
+    /* Custom styles for additional information */
+    .info {
+    background-color: #f2f2f2;
+    padding: 50px;
+    margin-bottom: 50px;
+    }
+
+    .info h2 {
+    font-family: 'DEADLY KILLERS Regular', sans-serif;
+    margin-bottom: 30px;
+    }
+
+    .info p {
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
+    }
+  
+      /* Custom stylings for navbar */
+
+    .navbar {
+    background-color: white;
+    font-family: 'Open Sans'; font-size:20px;
+    }
+
+
+    .navbar-toggler-icon::after {
+    display: inline-block;
+    margin-left: 0.3em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    vertical-align: middle;
+    }
+  }
+
+    /* Gradient overlay */
+
+    .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+    z-index: 0;
+    }
+
+    /* Contact form styles */
+    .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    }
+
+    .form-group {
+    margin-bottom: 20px;
+    }
+
+    .form-group label {
+    font-weight: bold;
+    }
+
+    .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+
+    .form-group button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    .form-group button:hover {
+    background-color: #45a049;
+    }
+
+
+  </style>
+</head>
+
+<body>
+ <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-auto" href="band-logo.png">
+        <img src="{% static 'band-logo.png' %}" width="150" height="60" class="align-top-left" alt="band logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'homepage:homepage' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tourdates:tourdates' %}">Tour Dates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact:contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'registration:login' %}">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Header -->
+  <header id="header">
+    <div id="header-carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'contact-header.jpg' %}" alt="band header image" class="img-fluid">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'contact-header-2.jpg' %}" alt="band header image" class="img-fluid">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'contact-header-3.jpg' %}" alt="band header image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="carousel-overlay"></div>
+    <div id="header-text">
+      <h1>Contact Us</h1>
+    </div>
+  </header>
+
+ <!-- Add dropdown arrow to header-->
+
+  <a href="#info" class="scroll-down">
+    <i class="fas fa-chevron-down"></i>
+  </a>
+
+  <!-- Content -->
+<div class="info">
+  <h2>Contact Us</h2>
+  <form class="contact-form" action="submit_form.php" method="post">
+    <div class="form-group">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required>
+    </div>
+    <div class="form-group">
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="contact-number">Contact Number:</label>
+      <input type="tel" id="contact-number" name="contact-number" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+<!-- Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
