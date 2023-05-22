@@ -19,6 +19,7 @@ from django.urls import path, include
 from polls.views import detail
 
 urlpatterns = [
+    path('', include('homepage.urls', namespace='homepage')),
     path('admin/', admin.site.urls),
     path('tourdates/', include('tourdates.urls', namespace ='tourdates')),
     path('homepage/', include('homepage.urls', namespace='homepage')),
